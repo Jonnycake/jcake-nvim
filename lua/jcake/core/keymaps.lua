@@ -1,8 +1,6 @@
 local jcake = require("jcake.core.lib")
 local telescope = require('telescope.builtin')
--- --------------------- --
--- basic keymap settings --
--- --------------------- --
+
 local keymaps = {
     i = {
         { key='<C-L><C-L>', command='<ESC>:set invrelativenumber<CR>a', desc='Toggle relative line numbers' },
@@ -14,6 +12,7 @@ local keymaps = {
         -- shortcuts
         { key='<leader>w', command='<C-W>', desc='Start window command' },
         { key='qq', command=':q<CR>' },
+        { key='QQ', command=':q!<CR>' },
 
         -- leader commands
         { key='<leader>t', command='<C-W>s<C-W><Down>:terminal<CR>:res 15<CR>i', desc='Open a small terminal in insert mode' },
@@ -47,14 +46,21 @@ local keymaps = {
         { key='<leader>fb', command=telescope.buffers, desc='Telescope buffers' },
         { key='<leader>fc', command=telescope.grep_string, desc='Telescope grep for string under cursor' },
         { key='<leader>fh', command=telescope.help_tags, desc='Telescope tags' },
-        { key='<leader>fk', command='<ESC>:Telescope keymaps<CR>', desc='List keymaps' },
+        { key='<leader>fm', command=telescope.marks, desc='Telescope marks' },
+        { key='<leader>fk', command=telescope.keymaps, desc='Telescope keymaps' },
         { key='<leader>gs', command=telescope.git_status, desc='Git status' },
         { key='<leader>gl', command=telescope.git_commits, desc='Git log' },
 
         -- Specialty comamnds (buffer specific)
         { key='<leader>c', command=jcake.cd_here, desc='CD to the current directory in netrw' },
+        { key='V', command='<ESC>v', desc='Default to visual line mode' },
+        { key='v', command='<ESC>V', desc='Default to visual line mode' },
     },
-    t={
+    v = {
+        { key='<S-Tab>', command='<vgv', desc='Un-indent block of code' },
+        { key='<Tab>', command='>vgv', desc='Indent block of code' },
+    },
+    t = {
         { key='<C-n>', command='<C-\\><C-n>', desc='Switch back to normal mode' },
     },
 }
