@@ -12,6 +12,9 @@ return {
                 ensure_installed = {
                     "lua_ls",
                     "intelephense",
+                    "tsserver",
+                    "html",
+                    "pyright",
                 },
             })
         end
@@ -22,6 +25,9 @@ return {
             local lspconfig = require('lspconfig')
             lspconfig.lua_ls.setup({})
             lspconfig.intelephense.setup({})
+            lspconfig.tsserver.setup({})
+            lspconfig.html.setup({})
+            lspconfig.pyright.setup({})
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
             vim.api.nvim_create_autocmd('LspAttach', {
