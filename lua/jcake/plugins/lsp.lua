@@ -52,7 +52,6 @@ return {
                 end, opts)
               end,
             })
-            vim.lsp.set_log_level(0)
         end
     }
 }
