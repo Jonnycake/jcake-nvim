@@ -1,6 +1,5 @@
 local jcake = require("jcake.core.lib")
 local telescope = require('telescope.builtin')
-
 local keymaps = {
     i = {
         { key='<C-L><C-L>', command='<ESC>:set invrelativenumber<CR>a', desc='Toggle relative line numbers' },
@@ -11,8 +10,15 @@ local keymaps = {
     n = {
         -- shortcuts
         { key='<leader>w', command='<C-W>', desc='Start window command' },
-        { key='qq', command=':q<CR>' },
-        { key='QQ', command=':q!<CR>' },
+        { key='qq', command='<ESC>:q<CR>' },
+        { key='QQ', command='<ESC>:q!<CR>' },
+
+        -- Location List
+        { key='[]l', command='<ESC>:lopen<CR>', desc='Open location list' },
+        { key='][l', command='<ESC>:lclose<CR>', desc='Close location list' },
+        { key='[l', command='<ESC>:lprev<CR>', desc='Previous location in location list' },
+        { key=']l', command='<ESC>:lnext<CR>', desc='Next location in location list' },
+        { key='[d]l', command=vim.diagnostic.setloclist, desc='Set location list from diagnostics' },
 
         -- leader commands
         { key='<leader>t', command='<C-W>s<C-W><Down>:terminal<CR>:res 15<CR>i', desc='Open a small terminal in insert mode' },
@@ -69,11 +75,11 @@ local keymaps = {
 -- run the keymaps and commands we configured up top --
 -- ------------------------------------------------- --
 for mode, binds in pairs(keymaps) do
-	for key, bind in pairs(binds) do
+	for _, bind in pairs(binds) do
         local noremap = true
         local silent = true
         local desc = ''
-        
+
         if bind['noremap'] ~= nil then
             noremap = bind['noremap']
         end
