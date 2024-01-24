@@ -14,5 +14,8 @@ o.relativenumber = true
 o.winbar = statusbar()
 o.fileformats = "unix,dos"
 
+-- Don't store any marks in shada file
+o.shada = "'0,f0"
+
 require("jcake.core.keymaps")
 require("jcake.core.autocommands")

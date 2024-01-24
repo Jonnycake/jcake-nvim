@@ -12,6 +12,7 @@ local keymaps = {
         { key='<leader>w', command='<C-W>', desc='Start window command' },
         { key='qq', command='<ESC>:q<CR>' },
         { key='QQ', command='<ESC>:q!<CR>' },
+        { key='<leader>m', command='<ESC>`', desc='Start a mark jump' },
 
         -- Location List
         { key='[]l', command='<ESC>:lopen<CR>', desc='Open location list' },
@@ -61,6 +62,18 @@ local keymaps = {
         { key='<leader>c', command=jcake.cd_here, desc='CD to the current directory in netrw' },
         { key='V', command='<ESC>v', desc='Default to visual line mode' },
         { key='v', command='<ESC>V', desc='Default to visual line mode' },
+
+        -- File Jump Shortcuts
+        { key='mq', command='mQ' },
+        { key='mw', command='mW' },
+        { key='me', command='mE' },
+        { key='mr', command='mR' },
+        { key='mt', command='mT' },
+        { key="'q", command="'Q|'m" },
+        { key="'w", command="'W|'m" },
+        { key="'e", command="'E|'m" },
+        { key="'r", command="'R|'m" },
+        { key="'t", command="'T|'m" },
     },
     v = {
         { key='<S-Tab>', command='<vgv', desc='Un-indent block of code' },
