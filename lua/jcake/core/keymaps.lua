@@ -64,16 +64,11 @@ local keymaps = {
         { key='v', command='<ESC>V', desc='Default to visual line mode' },
 
         -- File Jump Shortcuts
-        { key='mq', command='mQ' },
-        { key='mw', command='mW' },
-        { key='me', command='mE' },
-        { key='mr', command='mR' },
-        { key='mt', command='mT' },
-        { key="'q", command="'Q|'m" },
-        { key="'w", command="'W|'m" },
-        { key="'e", command="'E|'m" },
-        { key="'r", command="'R|'m" },
-        { key="'t", command="'T|'m" },
+        { key='mq', command='mQ' }, { key="'q", command="'Q|'e|zz" },
+        { key='mw', command='mW' }, { key="'w", command="'W|'e|zz" },
+        { key='me', command='mE' }, { key="'e", command="'E|'e|zz" },
+        { key='mr', command='mR' }, { key="'r", command="'R|'e|zz" },
+        { key='mt', command='mT' }, { key="'t", command="'T|'e|zz" },
     },
     v = {
         { key='<S-Tab>', command='<vgv', desc='Un-indent block of code' },
