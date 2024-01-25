@@ -13,6 +13,8 @@ local keymaps = {
         { key='qq', command='<ESC>:q<CR>' },
         { key='QQ', command='<ESC>:q!<CR>' },
         { key='<leader>m', command='<ESC>`', desc='Start a mark jump' },
+        { key='gb', command=':bnext<CR>', desc='Next buffer' },
+        { key='gB', command=':bprev<CR>', desc='Previous buffer' },
 
         -- Location List
         { key='[]l', command='<ESC>:lopen<CR>', desc='Open location list' },

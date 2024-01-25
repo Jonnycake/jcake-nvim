@@ -1,5 +1,10 @@
 local o = vim.opt
+local go = vim.go
 local statusbar = require("jcake.core.statusbar")
+Tabline = require("jcake.core.tabline")
+
+go.tabline = "%!v:lua.Tabline()"
+o.winbar = statusbar()
 
 o.cindent = false
 o.smartindent = false
@@ -11,7 +16,6 @@ o.shiftwidth = 4
 o.shellcmdflag = '-c'
 o.confirm = true
 o.relativenumber = true
-o.winbar = statusbar()
 o.fileformats = "unix,dos"
 
 -- Don't store any marks in shada file
