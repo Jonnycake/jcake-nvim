@@ -11,8 +11,6 @@ local keymaps = {
         -- shortcuts
         { key='<leader>w', command='<C-W>', desc='Start window command' },
         { key='qq', command='<ESC>:q<CR>' },
-        { key='QQ', command='<ESC>:q!<CR>' },
-        { key='<leader>m', command='<ESC>`', desc='Start a mark jump' },
         { key='gb', command=':bnext<CR>', desc='Next buffer' },
         { key='gB', command=':bprev<CR>', desc='Previous buffer' },
 
@@ -23,21 +21,26 @@ local keymaps = {
         { key=']l', command='<ESC>:lnext<CR>', desc='Next location in location list' },
         { key='[d]l', command=vim.diagnostic.setloclist, desc='Set location list from diagnostics' },
 
+        -- Quickfix List
+        { key='[]c', command='<ESC>:copen<CR>', desc='Open quickfix list' },
+        { key='][c', command='<ESC>:cclose<CR>', desc='Close quickfix list' },
+        { key='[c', command='<ESC>:cprev<CR>', desc='Previous location in quickfix list' },
+        { key=']c', command='<ESC>:cnext<CR>', desc='Next location in quickfix list' },
+        { key='[d]c', command=vim.diagnostic.setqflist, desc='Set quickfix list from diagnoistics' },
+
         -- leader commands
         { key='<leader>t', command='<C-W>s<C-W><Down>:terminal<CR>:res 15<CR>i', desc='Open a small terminal in insert mode' },
-        { key='<leader>.v', command='<ESC>:Vexplore<CR>', desc='Open netrw in current directory (vertical split)' },
-        { key='<leader>.h', command='<ESC>:Hexplore<CR>', desc='Open netrw in current directory (horizontal split)' },
-        { key='<leader>..', command='<ESC>:Explore<CR>', desc='Open netrw in current directory (this pane)' },
+        { key='<leader>-v', command='<ESC>:Vexplore<CR>', desc='Open netrw in current directory (vertical split)' },
+        { key='<leader>-h', command='<ESC>:Hexplore<CR>', desc='Open netrw in current directory (horizontal split)' },
+        { key='<leader>-t', command='<ESC>:tabnew<CR>:Explore<CR>', desc='Open netrw in current directory (new tab)' },
+        { key='<leader>--', command='<ESC>:Explore<CR>', desc='Open netrw in current directory (this pane)' },
         { key='<leader>q', command='<ESC>:bd<CR>', desc='Close buffer' },
         { key='<leader>h', command='<ESC>:noh<CR>', desc='Remove highlights' },
         { key='<leader>p', command='<ESC>"0p', desc='Paste last yank (below)' },
         { key='<leader>P', command='<ESC>"0P', desc='Paste last yank (above)' },
-        { key='<leader>b', command='<ESC>:bnext<CR>', desc='Next buffer' },
-        { key='<leader>B', command='<ESC>:bprev<CR>', desc='Next buffer' },
 
         -- CTRL commands
         { key='<C-L><C-L>', command=':set invrelativenumber<CR>', desc='Toggle relative line numbers' },
-        { key='<C-p>', command='<ESC>:set paste<CR>"*P:set nopaste<CR>', desc='Paste from clipboard' },
         { key='<C-b>', command='<C-b>zz', desc='Move up a full page and center screen' },
         { key='<C-f>', command='<C-f>zz', desc='Move down a full page and center screen' },
         { key='<C-d>', command='<C-d>zz', desc='Move down a half page and center screen' },
@@ -60,10 +63,8 @@ local keymaps = {
         { key='<leader>gs', command=telescope.git_status, desc='Git status' },
         { key='<leader>gl', command=telescope.git_commits, desc='Git log' },
 
-        -- Specialty comamnds (buffer specific)
+        -- Specialty commands (buffer specific)
         { key='<leader>c', command=jcake.cd_here, desc='CD to the current directory in netrw' },
-        { key='V', command='<ESC>v', desc='Default to visual line mode' },
-        { key='v', command='<ESC>V', desc='Default to visual line mode' },
 
         -- File Jump Shortcuts
         { key='mq', command='mQ' }, { key="'q", command="'Q|'e|zz" },
