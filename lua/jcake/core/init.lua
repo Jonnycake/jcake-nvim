@@ -18,7 +18,7 @@ o.confirm = true
 o.relativenumber = true
 o.fileformats = "unix,dos"
 o.foldmethod = 'indent'
-o.foldlevel = 99
+o.foldlevel = 99 -- Don't automatically fold anything
 
 -- Don't store any marks in shada file
 o.shada = "'0,f0"
