@@ -71,6 +71,9 @@ local keymaps = {
         { key='me', command='mE' }, { key="'e", command="'E|'e|zz" },
         { key='mr', command='mR' }, { key="'r", command="'R|'e|zz" },
         { key='mt', command='mT' }, { key="'t", command="'T|'e|zz" },
+
+        -- Code folding shortcuts
+        { key='<space>', command='za', desc='Fold at indent level' },
     },
     v = {
         { key='<S-Tab>', command='<vgv', desc='Un-indent block of code' },
