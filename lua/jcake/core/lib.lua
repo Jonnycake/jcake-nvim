@@ -4,6 +4,6 @@ return {
             return
         end
 
-        vim.cmd('cd ' .. vim.fn.getreg('%'))
+        vim.cmd('tcd ' .. vim.fn.getreg('%'))
     end
 }
