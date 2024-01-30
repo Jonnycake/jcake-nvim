@@ -1,3 +1,12 @@
+-- No LSP for twig, but we can tell it to use the html one
+vim.api.nvim_create_autocmd(
+    {'BufRead', 'BufNewFile',},
+    {
+        pattern="*.twig",
+        command="set syntax=html filetype=html",
+    }
+);
+
 return {
     {
         "williamboman/mason.nvim",
@@ -14,6 +23,7 @@ return {
                     "intelephense",
                     "tsserver",
                     "html",
+                    "cssls",
                     "pyright",
                 },
             })
@@ -56,11 +66,20 @@ return {
                 },
             })
 
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities.textDocument.completion.completionItem.snippetSupport = true;
             -- JS / TS
             lspconfig.tsserver.setup({})
 
             -- HTML
-            lspconfig.html.setup({})
+            lspconfig.html.setup({
+                capabilities = capabilities,
+            })
+
+            -- CSS
+            lspconfig.cssls.setup({
+                capabilities = capabilities,
+            })
 
             -- Python
             lspconfig.pyright.setup({})
