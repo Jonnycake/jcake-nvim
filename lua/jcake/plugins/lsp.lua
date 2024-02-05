@@ -25,6 +25,8 @@ return {
                     "html",
                     "cssls",
                     "pyright",
+                    "volar",
+                    "marksman",
                 },
             })
         end
@@ -71,6 +73,9 @@ return {
             -- JS / TS
             lspconfig.tsserver.setup({})
 
+            -- VueJS
+            lspconfig.volar.setup({})
+
             -- HTML
             lspconfig.html.setup({
                 capabilities = capabilities,
@@ -83,6 +88,9 @@ return {
 
             -- Python
             lspconfig.pyright.setup({})
+
+            -- Marksman
+            lspconfig.marksman.setup({})
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
