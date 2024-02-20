@@ -7,7 +7,7 @@ go.tabline = "%!v:lua.Tabline()"
 o.winbar = statusbar()
 
 o.cindent = false
-o.smartindent = false
+o.smartindent = true
 o.wrap = false
 o.number = true
 o.expandtab = true
