@@ -1,5 +1,5 @@
 vim.api.nvim_create_user_command(
-    'JCFormat', function(args)
+    'TabsToSpaces', function(args)
         local range_spec = '';
 
         if args.range == 2 then
