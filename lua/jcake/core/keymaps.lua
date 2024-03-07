@@ -38,7 +38,6 @@ local keymaps = {
         { key='<leader>-h', command='<ESC>:Hexplore<CR>', desc='Open netrw in current directory (horizontal split)' },
         { key='<leader>-t', command='<ESC>:tabnew<CR>:Explore<CR>', desc='Open netrw in current directory (new tab)' },
         { key='<leader>--', command='<ESC>:Explore<CR>', desc='Open netrw in current directory (this pane)' },
-        { key='<leader>q', command='<ESC>:bd<CR>', desc='Close buffer' },
         { key='<leader>h', command='<ESC>:noh<CR>', desc='Remove highlights' },
         { key='<C-P>', command='<ESC>"0P', desc='Paste last yank (above)' },
 
