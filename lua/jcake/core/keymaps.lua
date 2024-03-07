@@ -13,6 +13,10 @@ local keymaps = {
         { key='qq', command='<ESC>:q<CR>' },
         { key='gb', command=':bnext<CR>', desc='Next buffer' },
         { key='gB', command=':bprev<CR>', desc='Previous buffer' },
+        { key='<leader>y', command='<ESC>"*y', desc='Yank to clipboard' },
+        { key='<leader>p', command='<ESC>"*p', desc='Paste from clipboard (below)' },
+        { key='<leader>P', command='<ESC>"*P', desc='Paste from clipboard (above)' },
+        { key='<leader>d', command='<ESC>"_d', desc='Delete into blackhole register' },
 
         -- Location List
         { key='[]l', command='<ESC>:lopen<CR>', desc='Open location list' },
@@ -34,10 +38,8 @@ local keymaps = {
         { key='<leader>-h', command='<ESC>:Hexplore<CR>', desc='Open netrw in current directory (horizontal split)' },
         { key='<leader>-t', command='<ESC>:tabnew<CR>:Explore<CR>', desc='Open netrw in current directory (new tab)' },
         { key='<leader>--', command='<ESC>:Explore<CR>', desc='Open netrw in current directory (this pane)' },
-        { key='<leader>q', command='<ESC>:bd<CR>', desc='Close buffer' },
         { key='<leader>h', command='<ESC>:noh<CR>', desc='Remove highlights' },
-        { key='<leader>p', command='<ESC>"0p', desc='Paste last yank (below)' },
-        { key='<leader>P', command='<ESC>"0P', desc='Paste last yank (above)' },
+        { key='<C-P>', command='<ESC>"0P', desc='Paste last yank (above)' },
 
         -- CTRL commands
         { key='<C-L><C-L>', command=':set invrelativenumber<CR>', desc='Toggle relative line numbers' },
@@ -79,6 +81,7 @@ local keymaps = {
     v = {
         { key='<S-Tab>', command='<vgv', desc='Un-indent block of code' },
         { key='<Tab>', command='>vgv', desc='Indent block of code' },
+        { key='<leader>y', command='"*y', desc='Yank to clipboard' },
     },
     t = {
         { key='<C-n>', command='<C-\\><C-n>', desc='Switch back to normal mode' },
