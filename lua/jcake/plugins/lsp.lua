@@ -27,6 +27,7 @@ return {
                     "pyright",
                     "volar",
                     "marksman",
+                    "powershell_es",
                 },
             })
         end

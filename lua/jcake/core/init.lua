@@ -19,6 +19,7 @@ o.relativenumber = true
 o.fileformats = "unix,dos"
 o.foldmethod = 'indent'
 o.foldlevel = 99 -- Don't automatically fold anything
+o.mouse = ""
 
 -- Don't store any marks in shada file
 o.shada = "'0,f0"
