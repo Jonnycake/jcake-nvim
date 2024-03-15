@@ -28,6 +28,7 @@ return {
                     "volar",
                     "marksman",
                     "powershell_es",
+                    "groovyls",
                 },
             })
         end
@@ -92,6 +93,18 @@ return {
 
             -- Marksman
             lspconfig.marksman.setup({})
+
+            -- Powershell
+            lspconfig.powershell_es.setup({})
+
+            -- Groovy (e.g. build.gradle)
+            lspconfig.groovyls.setup({
+                cmd = {
+                    "java", "-jar",
+                    -- NOTE: This path might need to be updated (particularly if running on windows)
+                    os.getenv('HOME') .. "/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar"
+                }
+            })
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
