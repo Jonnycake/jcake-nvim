@@ -66,6 +66,11 @@ return {
                             "tokenizer", "xml", "xmlreader", "xmlrpc", "xmlwriter", "xsl", "Zend OPcache", "zip", "zlib",
                             "wordpress", "phpunit", "wordpress",
                         },
+                        environment = {
+                            includePaths = {
+                                os.getenv('HOME') .. '/.lsp/stubs/intelephense/',
+                            },
+                        },
                     },
                 },
             })

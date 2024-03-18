@@ -13,3 +13,12 @@ vim.api.nvim_create_user_command(
     end,
     { desc = 'Change 2 space to 4 space tabs', range=true }
 )
+
+vim.api.nvim_create_user_command(
+    'Lint', function(args)
+        if vim.bo.filetype == 'php' then
+            vim.cmd('!php -l "%"')
+        end
+    end,
+    { desc = 'Run linter against the current file', range=true }
+)

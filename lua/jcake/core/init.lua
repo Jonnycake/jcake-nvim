@@ -26,4 +26,4 @@ o.shada = "'0,f0"
 
 require("jcake.core.keymaps")
 require("jcake.core.autocommands")
-require("jcake.core.excommands")
+require("jcake.core.user_commands")
