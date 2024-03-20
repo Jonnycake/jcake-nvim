@@ -16,8 +16,14 @@ vim.api.nvim_create_user_command(
 
 vim.api.nvim_create_user_command(
     'Lint', function(args)
-        if vim.bo.filetype == 'php' then
+        local buf = vim.api.nvim_get_current_buf()
+
+        if vim.api.nvim_buf_get_option(buf, 'modified') then
+            print("You must save before linting")
+        elseif vim.bo.filetype == 'php' then
             vim.cmd('!php -l "%"')
+        else
+            print("No linter available for " .. vim.bo.filetype)
         end
     end,
     { desc = 'Run linter against the current file', range=true }
