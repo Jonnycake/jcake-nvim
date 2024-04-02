@@ -74,6 +74,7 @@ local keymaps = {
         { key='me', command='mE' }, { key="'e", command="'E|'e|zz" },
         { key='mr', command='mR' }, { key="'r", command="'R|'e|zz" },
         { key='mt', command='mT' }, { key="'t", command="'T|'e|zz" },
+        { key="'<Tab>", command=':b#<CR>', 'Switch to altnerate buffer' },
 
         -- Code folding shortcuts
         { key='<space>', command='za', desc='Fold at indent level' },
