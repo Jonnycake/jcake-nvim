@@ -29,6 +29,7 @@ return {
                     "marksman",
                     "powershell_es",
                     "groovyls",
+                    "gopls",
                 },
             })
         end
@@ -110,6 +111,9 @@ return {
                     os.getenv('HOME') .. "/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar"
                 }
             })
+
+            -- Golang
+            lspconfig.gopls.setup({})
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
