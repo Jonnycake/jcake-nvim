@@ -78,11 +78,18 @@ local keymaps = {
 
         -- Code folding shortcuts
         { key='<space>', command='za', desc='Fold at indent level' },
+
+        -- vsnip shortcuts
+        { key='<leader>snip', command=':VsnipYank<CR>:VsnipOpen<CR>' },
+        { key='<leader>vso', command=':VsnipOpen<CR>' },
     },
     v = {
         { key='<S-Tab>', command='<vgv', desc='Un-indent block of code' },
         { key='<Tab>', command='>vgv', desc='Indent block of code' },
         { key='<leader>y', command='"*y', desc='Yank to clipboard' },
+
+        -- vsnip shortcuts
+        { key='<leader>snip', command=':VsnipYank<CR>:VsnipOpen<CR>' },
     },
     t = {
         { key='<C-n>', command='<C-\\><C-n>', desc='Switch back to normal mode' },

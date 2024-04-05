@@ -30,6 +30,7 @@ return {
                     "powershell_es",
                     "groovyls",
                     "gopls",
+                    "clangd",
                 },
             })
         end
@@ -114,6 +115,9 @@ return {
 
             -- Golang
             lspconfig.gopls.setup({})
+
+            -- C / C++
+            lspconfig.clangd.setup({})
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
