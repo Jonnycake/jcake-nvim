@@ -34,10 +34,8 @@ local keymaps = {
 
         -- leader commands
         { key='<leader>t', command='<C-W>s<C-W><Down>:terminal<CR>:res 15<CR>i', desc='Open a small terminal in insert mode' },
-        { key='<leader>-v', command='<ESC>:Vexplore<CR>', desc='Open netrw in current directory (vertical split)' },
-        { key='<leader>-h', command='<ESC>:Hexplore<CR>', desc='Open netrw in current directory (horizontal split)' },
-        { key='<leader>-t', command='<ESC>:tabnew<CR>:Explore<CR>', desc='Open netrw in current directory (new tab)' },
-        { key='<leader>--', command='<ESC>:Explore<CR>', desc='Open netrw in current directory (this pane)' },
+        { key='<leader>__', command='<ESC>:Oil .<CR>', desc='Open oil in project directory' },
+        { key='<leader>--', command='<ESC>:Oil<CR>', desc='Open oil in current directory' },
         { key='<leader>h', command='<ESC>:noh<CR>', desc='Remove highlights' },
         { key='<C-P>', command='<ESC>"0P', desc='Paste last yank (above)' },
 
