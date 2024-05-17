@@ -1,5 +1,7 @@
 local jcake = require("jcake.core.lib")
 local telescope = require('telescope.builtin')
+
+
 local keymaps = {
     i = {
         { key='<C-L><C-L>', command='<ESC>:set invrelativenumber<CR>a', desc='Toggle relative line numbers' },
@@ -17,6 +19,9 @@ local keymaps = {
         { key='<leader>p', command='<ESC>"*p', desc='Paste from clipboard (below)' },
         { key='<leader>P', command='<ESC>"*P', desc='Paste from clipboard (above)' },
         { key='<leader>d', command='<ESC>"_d', desc='Delete into blackhole register' },
+        { key='<leader>gq', command=':set tw=80<CR>gq$:set tw=0<CR>', desc='Wrap text to 80 characters' },
+        { key='<leader>v', command='<C-v>', desc='Visual block mode' },
+        { key='<leader>jq', command=':%!jq .<CR>', desc='Pass entire file through jq' },
 
         -- Location List
         { key='[]l', command='<ESC>:lopen<CR>', desc='Open location list' },
@@ -55,6 +60,8 @@ local keymaps = {
         -- Telescope Commands
         { key='<leader>ff', command=telescope.find_files, desc='Telescope find files' },
         { key='<leader>fg', command=telescope.live_grep, desc='Telescope live grep' },
+        { key='<leader>fG', command=jcake.grep_cword, desc='Telescope live grep for word under cursor' },
+        { key='<leader>fF', command=jcake.find_cword, desc='Telescope find files for word under cursor' },
         { key='<leader>fb', command=telescope.buffers, desc='Telescope buffers' },
         { key='<leader>fc', command=telescope.grep_string, desc='Telescope grep for string under cursor' },
         { key='<leader>fh', command=telescope.help_tags, desc='Telescope tags' },
@@ -62,6 +69,7 @@ local keymaps = {
         { key='<leader>fk', command=telescope.keymaps, desc='Telescope keymaps' },
         { key='<leader>gs', command=telescope.git_status, desc='Git status' },
         { key='<leader>gl', command=telescope.git_commits, desc='Git log' },
+        { key='<leader>f/', command=telescope.current_buffer_fuzzy_find, desc='Fuzzy find in the current buffer' },
 
         -- Specialty commands (buffer specific)
         { key='<leader>c', command=jcake.cd_here, desc='CD to the current directory in netrw' },
@@ -85,6 +93,7 @@ local keymaps = {
         { key='<S-Tab>', command='<vgv', desc='Un-indent block of code' },
         { key='<Tab>', command='>vgv', desc='Indent block of code' },
         { key='<leader>y', command='"*y', desc='Yank to clipboard' },
+        { key='<leader>jq', command=':!jq .<CR>', desc='Pass marked text through jq' },
 
         -- vsnip shortcuts
         { key='<leader>snip', command=':VsnipYank<CR>:VsnipOpen<CR>' },
@@ -93,6 +102,7 @@ local keymaps = {
         { key='<C-n>', command='<C-\\><C-n>', desc='Switch back to normal mode' },
     },
 }
+
 
 -- ------------------------------------------------- --
 -- run the keymaps and commands we configured up top --
