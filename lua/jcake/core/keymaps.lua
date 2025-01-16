@@ -18,10 +18,11 @@ local keymaps = {
         { key='<leader>y', command='<ESC>"*y', desc='Yank to clipboard' },
         { key='<leader>p', command='<ESC>"*p', desc='Paste from clipboard (below)' },
         { key='<leader>P', command='<ESC>"*P', desc='Paste from clipboard (above)' },
-        { key='<leader>d', command='<ESC>"_d', desc='Delete into blackhole register' },
+        { key='<leader>d', command=vim.diagnostic.open_float, desc='Open full diagnostics for this line' },
         { key='<leader>gq', command=':set tw=80<CR>gq$:set tw=0<CR>', desc='Wrap text to 80 characters' },
         { key='<leader>v', command='<C-v>', desc='Visual block mode' },
         { key='<leader>jq', command=':%!jq .<CR>', desc='Pass entire file through jq' },
+        { key='<C-J>', command='<ESC>o<ESC>k', desc='Add new line below current line' },
 
         -- Location List
         { key='[]l', command='<ESC>:lopen<CR>', desc='Open location list' },
@@ -42,6 +43,7 @@ local keymaps = {
         { key='<leader>__', command='<ESC>:Oil .<CR>', desc='Open oil in project directory' },
         { key='<leader>--', command='<ESC>:Oil<CR>', desc='Open oil in current directory' },
         { key='<leader>h', command='<ESC>:noh<CR>', desc='Remove highlights' },
+        { key='<leader>H', command='<ESC>:let @/ = ""<CR>', desc='Clear last search' },
         { key='<C-P>', command='<ESC>"0P', desc='Paste last yank (above)' },
 
         -- CTRL commands
