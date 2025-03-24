@@ -1,7 +1,6 @@
 local jcake = require("jcake.core.lib")
 local telescope = require('telescope.builtin')
 
-
 local keymaps = {
     i = {
         { key='<C-L><C-L>', command='<ESC>:set invrelativenumber<CR>a', desc='Toggle relative line numbers' },

@@ -39,7 +39,7 @@ config=function()
             ['<C-Space>'] = cmp.mapping.complete(),
             ['<C-e>'] = cmp.mapping.abort(),
             ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-            ["<Tab>"] = cmp.mapping(function(fallback)
+            ["<C-s>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                     cmp.select_next_item()
                 elseif vim.fn["vsnip#available"](1) == 1 then

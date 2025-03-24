@@ -26,6 +26,8 @@ o.scrolloff = 10
 -- Don't store any marks in shada file
 o.shada = "'0,f0"
 
+vim.g.copilot_enabled = false
+
 require("jcake.core.keymaps")
 require("jcake.core.autocommands")
 require("jcake.core.user_commands")
